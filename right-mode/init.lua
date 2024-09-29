@@ -1,5 +1,6 @@
--- right-mode plugin configuration
 local M = {}
+
+local installed_themes = {}
 
 -- User preferences
 M.preferences = {
@@ -24,26 +25,33 @@ M.setup = function(opts)
         M.preferences.night_start = opts.night_start
     end
 
+    installed_themes = vim.fn.getcompletion('', 'color')
+
+    -- If light_themes or dark_themes is empty, choose a random colorscheme to apply for that mode
+    -- Otherwise, use the colorscheme(s) that is given
+    if vim.tbl_isempty(M.preferences.light_themes) then
+        vim.notify("right-mode: No light themes provided, using installed themes instead.")
+        M.preferences.light_themes = installed_themes
+    end
+    if vim.tbl_isempty(M.preferences.dark_themes) then
+        vim.notify("right-mode: No dark themes provided, using installed themes instead.")
+        M.preferences.dark_themes = installed_themes
+    end
+
     -- Run the command upon loading Neovim
     vim.cmd([[autocmd VimEnter * lua require('right-mode').apply_theme()]])
 end
 
 
--- The list of themes is assumed to be valid
+-- Return a random theme from a given list of valid themes
 local function select_random_theme(themes)
     return themes[math.random(#themes)]
 end
 
 
-local function get_installed_colorschemes()
-    return vim.fn.getcompletion('', 'color')
-end
-
-
 -- Check if the theme is installed
 local function theme_installed(theme)
-    local installed_themes = get_installed_colorschemes()
-    return vim.tbl_contains(installed_themes, theme)
+    return vim.tbl_contains(vim.fn.getcompletion('', 'color'), theme)
 end
 
 
@@ -53,18 +61,18 @@ M.apply_theme = function()
     local hour = tonumber(os.date("%H"))
 
     -- Determine whether to use light or dark themes based on the time
-    local themes = M.preferences.light_themes
+    local theme_choices = M.preferences.light_themes
     if hour >= M.preferences.night_start or hour < M.preferences.day_start then
-        themes = M.preferences.dark_themes
+        theme_choices = M.preferences.dark_themes
     end
 
-    local selected_theme = select_random_theme(themes)
+    local selected_theme = select_random_theme(theme_choices)
 
     if theme_installed(selected_theme) then
-        vim.cmd("colorscheme " .. selected_theme)      -- apply the theme
-        vim.notify("Applied " .. selected_theme)
+        vim.cmd("colorscheme " .. selected_theme)
+        vim.notify("right-mode: Applied " .. selected_theme)
     else
-        vim.notify("Error: Theme " .. selected_theme .. " is not installed.")
+        vim.notify("right-mode: Error: Theme " .. selected_theme .. " is not installed.")
     end
 end
 
