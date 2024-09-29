@@ -19,3 +19,5 @@ right-mode.nvim is the best of light mode and night mode, switching your colorsc
 	})
 	```
 right-mode will randomize from the given list of installed colorschemes starting light mode from ``day_start`` and starting night mode from ``night_start``, both of which are in a 24 hour time format.
+
+If the arguments for ``light_themes`` and ``dark_themes`` are empty, right-mode will randomize from the list of installed colorschemes.
