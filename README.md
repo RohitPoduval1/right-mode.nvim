@@ -8,8 +8,8 @@ right-mode.nvim is the best of light mode and night mode, switching your colorsc
 
 # Usage
 1. Add a folder called right-mode to your Neovim config directory
-2. Add init.lua within that folder
-3. Add this to init.lua at the root of the Neovim directory, not the one containing code for right-mode (no plugin managers are supported yet)
+2. Add init.lua (from this repo) within that folder
+3. Add this to the init.lua at the root of the Neovim directory, NOT the one containing code for right-mode (no plugin managers are supported yet)
 	```lua
 	require('right-mode').setup({
 	    light_themes = {"example1", "example2"},
