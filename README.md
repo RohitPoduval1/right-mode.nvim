@@ -1,4 +1,4 @@
-# right-mode.nvim (WIP!)
+# right-mode.nvim
 
 # The Problem 😢
 When coding during the day, I don't want to crank up the brightness of my screen and drain my battery just to see the code I am writing so I use a light colorscheme. During the night, however, a light theme is too bright so I use a dark theme, but manually switching is annoying!
