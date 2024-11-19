@@ -36,6 +36,8 @@ M.setup = function(opts)
 		vim.notify("right-mode: No dark themes provided, using installed themes instead.")
 		M.preferences.dark_themes = installed_themes
 	end
+
+	vim.cmd([[autocmd VimEnter * ++nested lua require('right-mode').apply_theme()]])
 end
 
 -- Return a random theme from a given list of valid themes
@@ -63,7 +65,8 @@ M.apply_theme = function()
 
 	if theme_installed(selected_theme) then
 		vim.cmd("colorscheme " .. selected_theme)
-		vim.cmd([[autocmd VimEnter * ++nested lua require('right-mode').apply_theme()]])
+		vim.cmd("doautocmd ColorScheme") -- Ensure highlights are reapplied
+		vim.cmd("redraw") -- Force UI redraw
 		vim.notify("right-mode: Applied " .. selected_theme)
 	else
 		vim.notify("right-mode: Error: Theme " .. selected_theme .. " is not installed.")
