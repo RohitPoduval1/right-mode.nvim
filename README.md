@@ -37,8 +37,8 @@ use {
   'rohitpoduval1/right-mode',
   config = function()
     require("right-mode").setup({
-        light_themes = { "kanagawa-lotus" },
-        dark_themes = { "kanagawa-dragon", "kanagawa-wave" },
+        light_themes = { },
+        dark_themes = { },
         day_start = 8, -- Light theme starting from 8 AM
         night_start = 20, -- Dark theme starting from 8 PM
     })
@@ -60,10 +60,21 @@ git clone --depth=1 https://github.com/rohitpoduval1/right-mode.git ~/.vim/bundl
 
 It is highly recommended to call `right-mode.setup()` for the best experience, although the plugin will still work without it.
 
+**Default Configuration**
 ```lua
 require("right-mode").setup({
-    light_themes = { "kanagawa-lotus" },
-    dark_themes = { "kanagawa-dragon", "kanagawa-wave" },
+    light_themes = { }, -- Your desired colorschemes as strings separated by commas
+    dark_themes = { },
+    day_start = 8, -- Light theme starting from 8 AM
+    night_start = 20, -- Dark theme starting from 8 PM
+})
+```
+
+**Example Configuration**
+```lua
+require("right-mode").setup({
+    light_themes = {"kanagawa-lotus", "catppuccin-latte" },
+    dark_themes = { "kanagawa-dragon" },
     day_start = 8, -- Light theme starting from 8 AM
     night_start = 20, -- Dark theme starting from 8 PM
 })
