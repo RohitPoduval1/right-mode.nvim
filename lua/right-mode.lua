@@ -28,6 +28,7 @@ M.setup = function(opts)
 	installed_themes = vim.fn.getcompletion("", "color")
 
 	-- If light_themes or dark_themes is empty, choose a random colorscheme to apply for that mode
+	-- Otherwise, use the colorscheme(s) that is given
 	if vim.tbl_isempty(M.preferences.light_themes) then
 		vim.notify("right-mode: No light themes provided, using installed themes instead.")
 		M.preferences.light_themes = installed_themes
@@ -36,9 +37,9 @@ M.setup = function(opts)
 		vim.notify("right-mode: No dark themes provided, using installed themes instead.")
 		M.preferences.dark_themes = installed_themes
 	end
-	vim.defer_fn(function()
-		vim.cmd([[autocmd VimEnter * ++nested lua require('right-mode').apply_theme()]])
-	end, 0)
+
+	-- Run the command upon loading Neovim
+	vim.cmd([[autocmd VimEnter * lua require('right-mode').apply_theme()]])
 end
 
 -- Return a random theme from a given list of valid themes
