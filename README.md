@@ -10,14 +10,12 @@ right-mode.nvim is the best of light mode and night mode, switching your colorsc
 
 # Installation
 
-It is highly recommended to call `right-mode.setup()` for the best experience.
-
 <details>
     <summary>lazy.nvim</summary>
     
 ```lua
 {
-	"RohitPoduval1/right-mode.nvim",
+    "RohitPoduval1/right-mode.nvim",
 }
 ```
 
