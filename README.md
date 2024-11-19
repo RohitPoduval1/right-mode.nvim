@@ -1,10 +1,10 @@
 # right-mode.nvim
 
-# The Problem 😢
+# The Problem :(
 
 When coding during the day, I don't want to crank up the brightness of my screen and drain my battery just to see the code I am writing so I use a light colorscheme. During the night, however, a light theme is too bright so I use a dark theme, but manually switching is annoying!
 
-# The Solution 😁
+# The Solution :)
 
 right-mode.nvim is the best of light mode and night mode, switching your colorscheme for you based on the time of day! As a bonus, since there are so many beautiful colorschemes, it will randomize the colorscheme for day and night based on the list you give it so you don't have to choose just one theme to use!
 
@@ -61,6 +61,7 @@ git clone --depth=1 https://github.com/rohitpoduval1/right-mode.git ~/.vim/bundl
 It is highly recommended to call `right-mode.setup()` for the best experience, although the plugin will still work without it.
 
 **Default Configuration**
+
 ```lua
 require("right-mode").setup({
     light_themes = { }, -- Your desired colorschemes as strings separated by commas
@@ -71,6 +72,7 @@ require("right-mode").setup({
 ```
 
 **Example Configuration**
+
 ```lua
 require("right-mode").setup({
     light_themes = {"kanagawa-lotus", "catppuccin-latte" },
