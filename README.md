@@ -18,8 +18,8 @@ right-mode.nvim is the best of light mode and night mode, switching your colorsc
     "rohitpoduval1/right-mode.nvim",
     config = function()
         require("right-mode").setup({
-            light_themes = { "kanagawa-lotus" },
-            dark_themes = { "kanagawa-dragon", "kanagawa-wave" },
+            light_themes = { },
+            dark_themes = { },
             day_start = 8, -- Light theme starting from 8 AM
             night_start = 20, -- Dark theme starting from 8 PM
         })
