@@ -12,22 +12,49 @@ right-mode.nvim is the best of light mode and night mode, switching your colorsc
 
 <details>
     <summary>lazy.nvim</summary>
-    
+
 ```lua
 {
-    "RohitPoduval1/right-mode.nvim",
+    "rohitpoduval1/right-mode.nvim",
 }
+```
+
+</details>
+
+<details>
+    <summary>packer.nvim</summary>
+
+```lua
+use {
+  'rohitpoduval1/right-mode',
+  config = function()
+    require("right-mode").setup({
+        light_themes = { "kanagawa-lotus" },
+        dark_themes = { "kanagawa-dragon", "kanagawa-wave" },
+        day_start = 8, -- Light theme starting from 8 AM
+        night_start = 20, -- Dark theme starting from 8 PM
+    })
+}
+```
+
+</details>
+
+<details>
+    <summary>Pathogen</summary>
+
+```
+git clone --depth=1 https://github.com/rohitpoduval1/right-mode.git ~/.vim/bundle/
 ```
 
 </details>
 
 # Setup
 
-It is highly recommended to call `right-mode.setup()` for the best experience.
+It is highly recommended to call `right-mode.setup()` for the best experience, although the plugin will still work without it.
 
 ```lua
 require("right-mode").setup({
-	light_themes = { "kanagawa-lotus" },
+    light_themes = { "kanagawa-lotus" },
 	dark_themes = { "kanagawa-dragon", "kanagawa-wave" },
 	day_start = 8, -- Light theme starting from 8 AM
 	night_start = 20, -- Dark theme starting from 8 PM
