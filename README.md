@@ -35,7 +35,7 @@
 
 ```lua
 use {
-  'rohitpoduval1/right-mode',
+  "rohitpoduval1/right-mode",
   config = function()
     require("right-mode").setup({
         light_themes = { },
@@ -77,7 +77,7 @@ require("right-mode").setup({
 
 ```lua
 require("right-mode").setup({
-    light_themes = {"kanagawa-lotus", "catppuccin-latte" },
+    light_themes = { "kanagawa-lotus", "catppuccin-latte" },
     dark_themes = { "kanagawa-dragon" },
     day_start = 8, -- Light theme starting from 8 AM
     night_start = 20, -- Dark theme starting from 8 PM
