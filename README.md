@@ -43,6 +43,7 @@ use {
         day_start = 8, -- Light theme starting from 8 AM
         night_start = 20, -- Dark theme starting from 8 PM
     })
+  end
 }
 ```
 
