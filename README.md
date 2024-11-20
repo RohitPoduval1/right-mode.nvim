@@ -2,11 +2,12 @@
 
 # The Problem :(
 
-When coding during the day, I don't want to crank up the brightness of my screen and drain my battery just to see the code I am writing so I use a light colorscheme. During the night, however, a light theme is too bright so I use a dark theme, but manually switching is annoying!
+- You're coding during the day and don't want to max out the brightness of your screen and drain your battery just to see the code you are writing, so you use a light colorscheme. During the night, a light colorscheme is too bright so you change back to a light colorscheme, but manually switching is annoying!
 
 # The Solution :)
 
-right-mode.nvim is the best of light mode and night mode, switching your colorscheme for you based on the time of day! As a bonus, since there are so many beautiful colorschemes, it will randomize the colorscheme for day and night based on the list you give it so you don't have to choose just one theme to use!
+- right-mode.nvim is the best of light mode and night mode, switching your colorscheme for you based on the time of day!
+- As a bonus, since there are so many beautiful colorschemes, it will randomize the colorscheme for day and night so you don't have to choose just one theme to use!
 
 # Installation
 
