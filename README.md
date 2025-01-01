@@ -49,15 +49,6 @@ use {
 
 </details>
 
-<details>
-    <summary>Pathogen</summary>
-
-```
-git clone --depth=1 https://github.com/rohitpoduval1/right-mode.git ~/.vim/bundle/
-```
-
-</details>
-
 # Setup
 
 It is highly recommended to call `right-mode.setup()` for the best experience, although the plugin will still work without it.
